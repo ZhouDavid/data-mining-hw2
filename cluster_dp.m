@@ -1,4 +1,3 @@
-
 xx=load('example_distances.dat');
 ND=max(xx(:,2));
 NL=max(xx(:,1));
@@ -128,10 +127,10 @@ if (NCLUST>1)
         if (rho_aver>bord_rho(cl(i))) 
           bord_rho(cl(i))=rho_aver;
         end
-        if (rho_aver>bord_rho(cl(j))) 
+        if (rho_aver>bord_rho(cl (j))) 
           bord_rho(cl(j))=rho_aver;
         end
-      end
+      end 
     end
   end
   for i=1:ND
@@ -186,13 +185,13 @@ for i=1:NCLUST
   plot(A(1:nn,1),A(1:nn,2),'o','MarkerSize',2,'MarkerFaceColor',cmap(ic,:),'MarkerEdgeColor',cmap(ic,:));
 end
 
-%for i=1:ND
+% for i=1:ND
 %   if (halo(i)>0)
 %      ic=int8((halo(i)*64.)/(NCLUST*1.));
 %      hold on
 %      plot(Y1(i,1),Y1(i,2),'o','MarkerSize',2,'MarkerFaceColor',cmap(ic,:),'MarkerEdgeColor',cmap(ic,:));
 %   end
-%end
+% end
 faa = fopen('CLUSTER_ASSIGNATION', 'w');
 disp('Generated file:CLUSTER_ASSIGNATION')
 disp('column 1:element id')
@@ -201,3 +200,5 @@ disp('column 3:cluster assignation with halo control')
 for i=1:ND
    fprintf(faa, '%i %i %i\n',i,cl(i),halo(i));
 end
+
+
